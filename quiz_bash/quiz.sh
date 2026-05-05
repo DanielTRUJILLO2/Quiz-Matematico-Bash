@@ -1,5 +1,36 @@
 #!/bin/bash
 
+hacer_pregunta()
+{
+    A=$1
+    B=$2
+    operador=$3
+    respuesta=$4
+
+    intentos=1
+
+    while (( intentos <= 3 ))
+    do
+        echo -n "¿Cuánto es $A $operador $B? "
+        read usuario
+
+        if (( usuario == respuesta ))
+        then
+            echo "¡Correcto! Muy bien."
+            return
+        else
+            if (( intentos < 3 ))
+            then
+                echo "Incorrecto. Inténtalo de nuevo."
+            fi
+        fi
+
+        (( intentos = intentos + 1 ))
+    done
+
+    echo "Se acabaron los intentos. La respuesta correcta era: $respuesta"
+}
+
 opcion=0
 
 while (( opcion != 9 ))
