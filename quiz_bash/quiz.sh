@@ -46,6 +46,12 @@ do
     read opcion
 
     case $opcion in
+        1)
+            A=$(( RANDOM % 101 ))
+            B=$(( RANDOM % 101 ))
+            respuesta=$(( A + B ))
+            hacer_pregunta $A $B "+" $respuesta
+            ;;
         9)
             echo "Saliendo del quiz..."
             ;;
