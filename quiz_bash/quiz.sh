@@ -52,6 +52,20 @@ do
             respuesta=$(( A + B ))
             hacer_pregunta $A $B "+" $respuesta
             ;;
+        2)
+            A=$(( RANDOM % 101 ))
+            B=$(( RANDOM % 101 ))
+
+            if (( A < B ))
+            then
+                temp=$A
+                A=$B
+                B=$temp
+            fi
+
+            respuesta=$(( A - B ))
+            hacer_pregunta $A $B "-" $respuesta
+            ;;
         9)
             echo "Saliendo del quiz..."
             ;;
