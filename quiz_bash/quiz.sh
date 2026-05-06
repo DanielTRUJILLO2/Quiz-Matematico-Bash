@@ -66,6 +66,12 @@ do
             respuesta=$(( A - B ))
             hacer_pregunta $A $B "-" $respuesta
             ;;
+        3)
+            A=$(( RANDOM % 100 + 1 ))
+            B=$(( RANDOM % 10 + 1 ))
+            respuesta=$(( A * B ))
+            hacer_pregunta $A $B "*" $respuesta
+            ;;
         9)
             echo "Saliendo del quiz..."
             ;;
