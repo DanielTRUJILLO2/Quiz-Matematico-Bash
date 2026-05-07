@@ -143,7 +143,12 @@ do
             echo "Saliendo del quiz..."
             ;;
         *)
+            echo
+            echo
             echo "Opción inválida. Intenta nuevamente."
+            echo
+            echo -n "Presiona ENTER para continuar..."
+            read
             ;;
     esac
 done
